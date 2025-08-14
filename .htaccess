@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# Route all non-file requests to public/index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/index.php [QSA,L]
+
+# Prevent access to sensitive directories
+RedirectMatch 403 ^/app/?$
+RedirectMatch 403 ^/config/?$
+RedirectMatch 403 ^/database/?$
+RedirectMatch 403 ^/storage/?$
+RedirectMatch 403 ^/vendor/?$

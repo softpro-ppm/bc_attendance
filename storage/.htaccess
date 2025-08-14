@@ -1,0 +1,2 @@
+# Deny access to all files in storage directory
+Deny from all
